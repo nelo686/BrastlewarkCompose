@@ -17,8 +17,13 @@ fun MainScreen(onGnomeClick: (Gnome) -> Unit) {
         topBar = { MainAppBar() }
     ) { padding ->
         var criteria by rememberSaveable { mutableStateOf("") }
+
         Column {
-            MainSearch(value = criteria, onValueChange = { criteria = it })
+            MainSearch(
+                value = criteria,
+                onValueChange = { criteria = it },
+                onSearch = { /*TODO*/ }
+            )
             GnomeList(
                 onClick = onGnomeClick,
                 modifier = Modifier.padding(padding)
