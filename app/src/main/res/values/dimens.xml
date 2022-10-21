@@ -6,4 +6,5 @@
     <dimen name="cell_thumb_height">200dp</dimen>
     <dimen name="cell_min_width">150dp</dimen>
     <dimen name="padding_xsmall">4dp</dimen>
+    <dimen name="detail_thumb_height">350dp</dimen>
 </resources>

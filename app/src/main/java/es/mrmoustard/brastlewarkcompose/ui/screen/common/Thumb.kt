@@ -11,13 +11,14 @@ import es.mrmoustard.brastlewarkcompose.R
 import es.mrmoustard.brastlewarkcompose.model.Gnome
 
 @Composable
-fun Thumb(item: Gnome, modifier: Modifier = Modifier) {
+fun Thumb(
+    item: Gnome,
+    modifier: Modifier = Modifier
+) {
     AsyncImage(
         model = item.thumbnail,
         contentDescription = null,
-        modifier = modifier
-            .height(dimensionResource(id = R.dimen.cell_thumb_height))
-            .fillMaxWidth(),
+        modifier = modifier.fillMaxWidth(),
         contentScale = ContentScale.Crop
     )
 }

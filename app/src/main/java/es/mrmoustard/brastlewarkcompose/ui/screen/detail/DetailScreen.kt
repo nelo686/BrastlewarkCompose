@@ -1,12 +1,20 @@
 package es.mrmoustard.brastlewarkcompose.ui.screen.detail
 
-import androidx.compose.foundation.layout.padding
-import androidx.compose.material.Scaffold
-import androidx.compose.material.Text
-import androidx.compose.material.TopAppBar
+import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.*
+import androidx.compose.material.*
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.dimensionResource
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
+import es.mrmoustard.brastlewarkcompose.R
+import es.mrmoustard.brastlewarkcompose.model.Gnome
 import es.mrmoustard.brastlewarkcompose.model.getGnome
 import es.mrmoustard.brastlewarkcompose.ui.screen.common.ArrowBackIcon
 import es.mrmoustard.brastlewarkcompose.ui.screen.common.Thumb
@@ -23,6 +31,48 @@ fun DetailScreen(itemId: Int, onUpClick: () -> Unit) {
             )
         }
     ) { padding ->
-        Thumb(item = gnome, Modifier.padding(paddingValues = padding))
+        Preview(Modifier.padding(paddingValues = padding))
     }
+}
+
+@Preview(showBackground = true)
+@Composable
+fun Preview(modifier: Modifier = Modifier) {
+    val gnome = Gnome(
+        id = 1,
+        name = "weofn vsdv",
+        thumbnail = "https://loremflickr.com/320/240/dog?lock=$1",
+        hairColor = "Blue",
+        friends = listOf("dfgs", "dfvsv", "dfgsbgtr"),
+        professions = listOf("dfgs", "dfvsv", "dfgsbgtr")
+    )
+
+    Column(
+        modifier = Modifier.fillMaxSize()
+    ) {
+        Thumb(
+            item = gnome,
+            modifier = Modifier
+                .height(dimensionResource(id = R.dimen.detail_thumb_height))
+                .background(Color.Cyan)
+        )
+        Name(name = gnome.name)
+        Overview(gnome = gnome)
+        Section(header = "Professions", list = gnome.professions)
+        Section(header = "Friends", list = gnome.friends)
+    }
+}
+
+@Composable
+private fun Name(name: String) {
+    Text(
+        text = name,
+        style = MaterialTheme.typography.h6,
+        fontSize = 24.sp,
+        fontWeight = FontWeight.Bold,
+        textAlign = TextAlign.Center,
+        modifier = Modifier
+            .padding(top = 25.dp)
+            .fillMaxWidth()
+    )
 }

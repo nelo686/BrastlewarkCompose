@@ -29,7 +29,12 @@ fun GnomeItem(item: Gnome, onClick: () -> Unit) {
             border = BorderStroke(dimensionResource(id = R.dimen.card_border_stroke), Color.LightGray)
         ) {
             Column {
-                Thumb(item = item)
+                Thumb(
+                    item = item,
+                    modifier = Modifier.height(
+                        dimensionResource(id = R.dimen.cell_thumb_height)
+                    )
+                )
                 Title(item = item)
             }
         }
