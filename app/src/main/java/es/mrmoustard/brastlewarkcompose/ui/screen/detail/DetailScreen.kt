@@ -2,6 +2,8 @@ package es.mrmoustard.brastlewarkcompose.ui.screen.detail
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.*
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
@@ -31,24 +33,19 @@ fun DetailScreen(itemId: Int, onUpClick: () -> Unit) {
             )
         }
     ) { padding ->
-        Preview(Modifier.padding(paddingValues = padding))
+        Container(
+            gnome = gnome,
+            modifier = Modifier.padding(paddingValues = padding)
+        )
     }
 }
 
-@Preview(showBackground = true)
 @Composable
-fun Preview(modifier: Modifier = Modifier) {
-    val gnome = Gnome(
-        id = 1,
-        name = "weofn vsdv",
-        thumbnail = "https://loremflickr.com/320/240/dog?lock=$1",
-        hairColor = "Blue",
-        friends = listOf("dfgs", "dfvsv", "dfgsbgtr"),
-        professions = listOf("dfgs", "dfvsv", "dfgsbgtr")
-    )
-
+fun Container(gnome: Gnome, modifier: Modifier = Modifier) {
     Column(
-        modifier = Modifier.fillMaxSize()
+        modifier = Modifier
+            .fillMaxSize()
+            .verticalScroll(rememberScrollState())
     ) {
         Thumb(
             item = gnome,
