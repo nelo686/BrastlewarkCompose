@@ -1,4 +1,4 @@
-package es.mrmoustard.brastlewarkcompose.model
+package es.mrmoustard.domain.model
 
 data class Gnome(
     var id: Int = 0,

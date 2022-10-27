@@ -9,7 +9,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
-import es.mrmoustard.brastlewarkcompose.model.Gnome
+import es.mrmoustard.domain.model.Gnome
 
 @Composable
 fun MainScreen(onGnomeClick: (Gnome) -> Unit) {

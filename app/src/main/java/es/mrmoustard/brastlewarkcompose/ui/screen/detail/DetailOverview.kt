@@ -10,8 +10,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import es.mrmoustard.brastlewarkcompose.model.Gnome
 import es.mrmoustard.brastlewarkcompose.ui.theme.DarkGray
+import es.mrmoustard.domain.model.Gnome
 
 
 @Composable

@@ -12,14 +12,13 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import es.mrmoustard.brastlewarkcompose.R
-import es.mrmoustard.brastlewarkcompose.model.Gnome
-import es.mrmoustard.brastlewarkcompose.model.getGnome
 import es.mrmoustard.brastlewarkcompose.ui.screen.common.ArrowBackIcon
 import es.mrmoustard.brastlewarkcompose.ui.screen.common.Thumb
+import es.mrmoustard.domain.model.Gnome
+import es.mrmoustard.domain.model.getGnome
 
 @Composable
 fun DetailScreen(itemId: Int, onUpClick: () -> Unit) {

@@ -15,10 +15,10 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.dimensionResource
 import es.mrmoustard.brastlewarkcompose.R
-import es.mrmoustard.brastlewarkcompose.model.Gnome
-import es.mrmoustard.brastlewarkcompose.model.getGnome
 import es.mrmoustard.brastlewarkcompose.ui.screen.common.Thumb
 import es.mrmoustard.brastlewarkcompose.ui.theme.BrastlewarkComposeTheme
+import es.mrmoustard.domain.model.Gnome
+import es.mrmoustard.domain.model.getGnome
 
 @Composable
 fun GnomeItem(item: Gnome, onClick: () -> Unit) {
