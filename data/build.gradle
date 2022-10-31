@@ -1,5 +1,9 @@
-apply plugin: 'kotlin'
-apply plugin: 'kotlin-kapt'
+plugins {id 'com.android.library'}
+apply from: "../base.gradle"
+
+android {
+    namespace 'es.mrmoustard.data'
+}
 
 dependencies {
     implementation project(":domain")
