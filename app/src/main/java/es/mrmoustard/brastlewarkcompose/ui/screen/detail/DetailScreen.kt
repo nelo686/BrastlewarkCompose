@@ -4,7 +4,10 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
-import androidx.compose.material.*
+import androidx.compose.material3.*
+import androidx.compose.material3.Scaffold
+import androidx.compose.material3.Text
+import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
@@ -20,6 +23,7 @@ import es.mrmoustard.brastlewarkcompose.ui.screen.common.Thumb
 import es.mrmoustard.domain.model.Gnome
 import es.mrmoustard.domain.model.getGnome
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun DetailScreen(itemId: Int, onUpClick: () -> Unit) {
     val gnome = remember { getGnome().first { it.id == itemId } }
@@ -63,7 +67,7 @@ fun Container(gnome: Gnome, modifier: Modifier = Modifier) {
 private fun Name(name: String) {
     Text(
         text = name,
-        style = MaterialTheme.typography.h6,
+        style = MaterialTheme.typography.displayMedium,
         fontSize = 24.sp,
         fontWeight = FontWeight.Bold,
         textAlign = TextAlign.Center,

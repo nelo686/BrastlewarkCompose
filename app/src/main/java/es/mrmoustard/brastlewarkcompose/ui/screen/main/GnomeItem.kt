@@ -6,9 +6,10 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.lazy.grid.items
-import androidx.compose.material.Card
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Text
+import androidx.compose.material3.Card
+import androidx.compose.material3.CardDefaults
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -25,7 +26,7 @@ fun GnomeItem(item: Gnome, onClick: () -> Unit) {
     BrastlewarkComposeTheme {
         Card(
             modifier = Modifier.clickable(onClick = onClick),
-            elevation = dimensionResource(id = R.dimen.card_elevation),
+            elevation = CardDefaults.cardElevation(dimensionResource(id = R.dimen.card_elevation)),
             border = BorderStroke(dimensionResource(id = R.dimen.card_border_stroke), Color.LightGray)
         ) {
             Column {
@@ -51,7 +52,7 @@ private fun Title(item: Gnome) {
     ) {
         Text(
             text = item.name,
-            style = MaterialTheme.typography.h6
+            style = MaterialTheme.typography.displayMedium
         )
     }
 }
